@@ -6,3 +6,8 @@
 {"msgid":1,"id":3,"password":"555555"}
 一对一聊天
 {"msgid":5,"id":1,"toid":3,"msg":"hello!!!!!!"}
+添加好友
+{"msgid":6,"id":1,"friendid":3}
+{"msgid":6,"id":1,"friendid":999}
+重新登录（登录成功后服务端会推送好友列表 msgid:8）
+{"msgid":1,"id":1,"password":"123456"}

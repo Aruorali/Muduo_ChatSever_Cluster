@@ -5,6 +5,7 @@
   CMakeFiles/ChatServer.dir/chatserver.cpp.o \
   CMakeFiles/ChatServer.dir/chatservice.cpp.o \
   CMakeFiles/ChatServer.dir/__/database/db.cpp.o \
+  CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o \
   CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o \
   CMakeFiles/ChatServer.dir/__/database/user.cpp.o \
   CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o \
@@ -58,6 +59,8 @@ CMakeFiles/ChatServer.dir/chatserver.cpp.o:
 CMakeFiles/ChatServer.dir/chatservice.cpp.o:
 
 CMakeFiles/ChatServer.dir/__/database/db.cpp.o:
+
+CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o:
 
 CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o:
 

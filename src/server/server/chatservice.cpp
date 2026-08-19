@@ -2,6 +2,7 @@
 #include"msgtype.hpp"
 #include"user.hpp"
 #include"usermodle.hpp"
+#include"friendmodel.hpp"
 #include<muduo/base/Logging.h>
 
 using namespace std::placeholders;
@@ -17,6 +18,7 @@ ChatService::ChatService()
     _handlerMap.insert({LOGIN_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});
     _handlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});
     _handlerMap.insert({SEND_MSG,std::bind(&ChatService::onechat, this, _1, _2, _3)});
+    _handlerMap.insert({ADD_FRIEND_MSG,std::bind(&ChatService::addfriend, this, _1, _2, _3)});
 }
 
 //获取消息对应的处理器
@@ -51,6 +53,7 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
         }
 
         // 登录成功后，向该用户推送离线消息
+        OfflinMsgModel _offlinemsgmodel;
         std::vector<std::string> offlineMsgs = _offlinemsgmodel.query(id);
         if (!offlineMsgs.empty())
         {
@@ -63,6 +66,24 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
             }
             // 推送完毕后删除该用户的离线消息
             _offlinemsgmodel.remove(id);
+        }
+
+        //登录成功推送好友列表
+        FriendModel friendModel;
+        std::vector<User> friends = friendModel.query(id);
+        if (!friends.empty())
+        {
+            json friendList;
+            friendList["msgid"] = FRIEND_LIST_MSG;
+            for (const User &f : friends)
+            {
+                json friendInfo;
+                friendInfo["id"] = f.getId();
+                friendInfo["name"] = f.getName();
+                friendInfo["state"] = f.getState();
+                friendList["friends"].push_back(friendInfo);
+            }
+            conn->send(friendList.dump());
         }
 
         json response;
@@ -125,8 +146,31 @@ void ChatService::onechat(const TcpConnectionPtr &conn, json &js, Timestamp time
         }
     }
     //不在线,储存离线消息
+    OfflinMsgModel _offlinemsgmodel;
     _offlinemsgmodel.insert(toid,js["msg"].get<std::string>());
 
+}
+//处理添加好友消息
+void ChatService::addfriend(const TcpConnectionPtr &conn, json &js, Timestamp time)
+{
+    int id=js["id"].get<int>();
+    int friendid=js["friendid"].get<int>();
+    FriendModel friendmodel;
+
+    json response;
+    response["msgid"] = ADD_FRIEND_ACK;
+    if (friendmodel.add(id, friendid))
+    {
+        response["errno"] = 0;
+        LOG_INFO << "user id:" << id << " add friend id:" << friendid;
+    }
+    else
+    {
+        response["errno"] = 1;
+        response["errmsg"] = "add friend failed";
+        LOG_ERROR << "user id:" << id << " add friend id:" << friendid << " failed";
+    }
+    conn->send(response.dump());
 }
 //客户端异常断开
 void ChatService::clientClose(const TcpConnectionPtr &conn)

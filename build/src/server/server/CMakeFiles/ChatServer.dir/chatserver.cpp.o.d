@@ -322,6 +322,8 @@ src/server/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: \
  /usr/include/c++/14/bits/stl_numeric.h \
  /usr/include/c++/14/pstl/glue_numeric_defs.h /usr/include/c++/14/any \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/offlinemsgmodel.hpp \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/friendmodel.hpp \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
  /usr/include/c++/14/mutex /usr/include/c++/14/bits/std_mutex.h \
  /usr/include/c++/14/bits/unique_lock.h \
  /usr/local/include/muduo/base/Logging.h \

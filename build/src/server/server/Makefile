@@ -161,6 +161,30 @@ __/database/db.cpp.s:
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/db.cpp.s
 .PHONY : __/database/db.cpp.s
 
+__/database/friendmodel.o: __/database/friendmodel.cpp.o
+.PHONY : __/database/friendmodel.o
+
+# target to build an object file
+__/database/friendmodel.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o
+.PHONY : __/database/friendmodel.cpp.o
+
+__/database/friendmodel.i: __/database/friendmodel.cpp.i
+.PHONY : __/database/friendmodel.i
+
+# target to preprocess a source file
+__/database/friendmodel.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.i
+.PHONY : __/database/friendmodel.cpp.i
+
+__/database/friendmodel.s: __/database/friendmodel.cpp.s
+.PHONY : __/database/friendmodel.s
+
+# target to generate assembly for a file
+__/database/friendmodel.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.s
+.PHONY : __/database/friendmodel.cpp.s
+
 __/database/offlinemsgmodel.o: __/database/offlinemsgmodel.cpp.o
 .PHONY : __/database/offlinemsgmodel.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... __/database/db.o"
 	@echo "... __/database/db.i"
 	@echo "... __/database/db.s"
+	@echo "... __/database/friendmodel.o"
+	@echo "... __/database/friendmodel.i"
+	@echo "... __/database/friendmodel.s"
 	@echo "... __/database/offlinemsgmodel.o"
 	@echo "... __/database/offlinemsgmodel.i"
 	@echo "... __/database/offlinemsgmodel.s"

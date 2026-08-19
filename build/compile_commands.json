@@ -19,6 +19,12 @@
 },
 {
   "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/friendmodel.cpp",
+  "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/friendmodel.cpp",
+  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o"
+},
+{
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
   "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/offlinemsgmodel.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/offlinemsgmodel.cpp",
   "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o"

@@ -314,6 +314,8 @@ src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/c++/14/bits/stl_numeric.h \
  /usr/include/c++/14/pstl/glue_numeric_defs.h /usr/include/c++/14/any \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/offlinemsgmodel.hpp \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/friendmodel.hpp \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
  /usr/include/c++/14/mutex /usr/include/c++/14/bits/std_mutex.h \
  /usr/include/c++/14/bits/unique_lock.h \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public/msgtype.hpp \
@@ -329,7 +331,5 @@ src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/mysql/client_plugin.h /usr/include/c++/14/stdlib.h \
  /usr/include/mysql/plugin_auth_common.h \
  /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
- /usr/include/mysql/errmsg.h \
- /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
- /usr/local/include/muduo/base/Logging.h \
+ /usr/include/mysql/errmsg.h /usr/local/include/muduo/base/Logging.h \
  /usr/local/include/muduo/base/LogStream.h

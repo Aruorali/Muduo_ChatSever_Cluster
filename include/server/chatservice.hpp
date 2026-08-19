@@ -4,6 +4,7 @@
 #include<muduo/net/TcpConnection.h>
 #include"json.hpp"
 #include"offlinemsgmodel.hpp"
+#include"friendmodel.hpp"
 #include<unordered_map>
 #include<functional>
 #include<mutex>
@@ -26,6 +27,8 @@ public:
     void reg(const TcpConnectionPtr &conn, json &js, Timestamp time);
     //处理发送消息
     void onechat(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    //处理添加好友业务
+    void addfriend(const TcpConnectionPtr &conn, json &js, Timestamp time);
     //客户端异常断开
     void clientClose(const TcpConnectionPtr &conn);
     //服务端异常断开
@@ -36,7 +39,6 @@ private:
     ChatService();
 
     std::mutex _mutex;
-    OfflinMsgModel _offlinemsgmodel;
 
     std::unordered_map<int, handler> _handlerMap;                   // 存储消息id和其对应的业务处理方法
     std::unordered_map<int, TcpConnectionPtr> _userOnlineMap;       // 存储在线用户的id和连接

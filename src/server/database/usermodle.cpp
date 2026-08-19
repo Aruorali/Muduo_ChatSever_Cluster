@@ -157,7 +157,8 @@ void UserModle::updateState(User user)
     mysql_stmt_close(stmt);
 }
 
-// 重置用户的状态信息
+// 重置用户的状态信息（防止上次异常退出后，用户卡在 online 状态无法再登录）
 void UserModle::resetState()
 {
+    _mysql.update("UPDATE user SET state = 'offline' WHERE state = 'online'");
 }

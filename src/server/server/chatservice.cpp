@@ -128,7 +128,7 @@ void ChatService::onechat(const TcpConnectionPtr &conn, json &js, Timestamp time
     _offlinemsgmodel.insert(toid,js["msg"].get<std::string>());
 
 }
-//异常断开
+//客户端异常断开
 void ChatService::clientClose(const TcpConnectionPtr &conn)
 {
     int userId = -1;
@@ -155,4 +155,10 @@ void ChatService::clientClose(const TcpConnectionPtr &conn)
         userModle.updateState(user);
         LOG_INFO << "user id:" << userId << " disconnected, state set to offline";
     }
+}
+//服务端异常中断
+void ChatService::serverClose()
+{
+    UserModle usermodle;
+    usermodle.resetState();
 }

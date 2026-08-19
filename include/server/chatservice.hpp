@@ -26,8 +26,10 @@ public:
     void reg(const TcpConnectionPtr &conn, json &js, Timestamp time);
     //处理发送消息
     void onechat(const TcpConnectionPtr &conn, json &js, Timestamp time);
-    //异常断开
+    //客户端异常断开
     void clientClose(const TcpConnectionPtr &conn);
+    //服务端异常断开
+    void serverClose();
 
     handler getHandler(int msgid);
 private:

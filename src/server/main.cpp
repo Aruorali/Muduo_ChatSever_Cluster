@@ -16,7 +16,7 @@ int main()
     signal(SIGTERM, resethandler);
 
     EventLoop loop;
-    InetAddress listenAddr("127.0.0.1", 6000);
+    InetAddress listenAddr("0.0.0.0", 6000);
     ChatServer server(&loop, listenAddr, "ChatServer");
     server.start();
 

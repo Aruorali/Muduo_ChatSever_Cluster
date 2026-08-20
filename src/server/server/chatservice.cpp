@@ -54,14 +54,15 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
 
         // 登录成功后，向该用户推送离线消息
         OfflinMsgModel _offlinemsgmodel;
-        std::vector<std::string> offlineMsgs = _offlinemsgmodel.query(id);
+        std::vector<std::pair<int, std::string>> offlineMsgs = _offlinemsgmodel.query(id);
         if (!offlineMsgs.empty())
         {
             json chatMsg;
             chatMsg["msgid"] = SEND_MSG;
-            for (const std::string &msg : offlineMsgs)
+            for (const auto &p : offlineMsgs)
             {
-                chatMsg["msg"] = msg;
+                chatMsg["id"] = p.first;   // 发送者 id
+                chatMsg["msg"] = p.second;
                 conn->send(chatMsg.dump());
             }
             // 推送完毕后删除该用户的离线消息
@@ -147,7 +148,7 @@ void ChatService::onechat(const TcpConnectionPtr &conn, json &js, Timestamp time
     }
     //不在线,储存离线消息
     OfflinMsgModel _offlinemsgmodel;
-    _offlinemsgmodel.insert(toid,js["msg"].get<std::string>());
+    _offlinemsgmodel.insert(toid, js["id"].get<int>(), js["msg"].get<std::string>());
 
 }
 //处理添加好友消息

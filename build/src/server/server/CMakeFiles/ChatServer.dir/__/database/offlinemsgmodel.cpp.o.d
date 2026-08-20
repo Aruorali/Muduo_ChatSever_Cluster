@@ -118,7 +118,8 @@ src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o: \
  /usr/include/asm-generic/errno.h /usr/include/asm-generic/errno-base.h \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/14/bits/charconv.h \
- /usr/include/c++/14/bits/basic_string.tcc \
+ /usr/include/c++/14/bits/basic_string.tcc /usr/include/c++/14/utility \
+ /usr/include/c++/14/bits/stl_relops.h \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/db.hpp \
  /usr/include/mysql/mysql.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stdbool.h \

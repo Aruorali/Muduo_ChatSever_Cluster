@@ -29,6 +29,12 @@ public:
     void onechat(const TcpConnectionPtr &conn, json &js, Timestamp time);
     //处理添加好友业务
     void addfriend(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    //处理创建群组业务
+    void createGroup(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    //处理加入群组业务
+    void addGroup(const TcpConnectionPtr &conn, json &js, Timestamp time);
+    //处理群聊业务
+    void groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time);
     //客户端异常断开
     void clientClose(const TcpConnectionPtr &conn);
     //服务端异常断开

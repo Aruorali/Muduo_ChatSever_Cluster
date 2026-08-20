@@ -3,6 +3,7 @@
 #include"user.hpp"
 #include"usermodle.hpp"
 #include"friendmodel.hpp"
+#include"groupmodel.hpp"
 #include<muduo/base/Logging.h>
 
 using namespace std::placeholders;
@@ -19,6 +20,9 @@ ChatService::ChatService()
     _handlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});
     _handlerMap.insert({SEND_MSG,std::bind(&ChatService::onechat, this, _1, _2, _3)});
     _handlerMap.insert({ADD_FRIEND_MSG,std::bind(&ChatService::addfriend, this, _1, _2, _3)});
+    _handlerMap.insert({CREATE_GROUP_MSG,std::bind(&ChatService::createGroup, this, _1, _2, _3)});
+    _handlerMap.insert({ADD_GROUP_MSG,std::bind(&ChatService::addGroup, this, _1, _2, _3)});
+    _handlerMap.insert({GROUP_CHAT_MSG,std::bind(&ChatService::groupChat, this, _1, _2, _3)});
 }
 
 //获取消息对应的处理器
@@ -173,6 +177,71 @@ void ChatService::addfriend(const TcpConnectionPtr &conn, json &js, Timestamp ti
     }
     conn->send(response.dump());
 }
+//处理创建群组业务
+void ChatService::createGroup(const TcpConnectionPtr &conn, json &js, Timestamp time)
+{
+    int userid = js["id"].get<int>();
+
+    Group group;
+    group.setName(js["groupname"].get<std::string>());
+    group.setDesc(js["groupdesc"].get<std::string>());
+
+    GroupModel groupModel;
+    json response;
+    response["msgid"] = CREATE_GROUP_ACK;
+    if (groupModel.createGroup(group))
+    {
+        // 创建成功，把创建者加入群组，角色 creator
+        groupModel.addGroup(userid, group.getId(), "creator");
+        response["errno"] = 0;
+        response["groupid"] = group.getId();
+        LOG_INFO << "user id:" << userid << " create group id:" << group.getId();
+    }
+    else
+    {
+        response["errno"] = 1;
+        response["errmsg"] = "create group failed";
+    }
+    conn->send(response.dump());
+}
+
+//处理加入群组业务
+void ChatService::addGroup(const TcpConnectionPtr &conn, json &js, Timestamp time)
+{
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+
+    GroupModel groupModel;
+    groupModel.addGroup(userid, groupid, "normal");
+
+    json response;
+    response["msgid"] = ADD_GROUP_ACK;
+    response["errno"] = 0;
+    conn->send(response.dump());
+    LOG_INFO << "user id:" << userid << " join group id:" << groupid;
+}
+
+//处理群聊业务
+void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time)
+{
+    int userid = js["id"].get<int>();
+    int groupid = js["groupid"].get<int>();
+
+    GroupModel groupModel;
+    std::vector<GroupUser> members = groupModel.queryGroupUsers(userid, groupid);
+
+    std::string msg = js.dump();
+    std::lock_guard<std::mutex> lock(_mutex);
+    for (const GroupUser &member : members)
+    {
+        auto it = _userOnlineMap.find(member.getId());
+        if (it != _userOnlineMap.end())
+        {
+            it->second->send(msg);
+        }
+    }
+}
+
 //客户端异常断开
 void ChatService::clientClose(const TcpConnectionPtr &conn)
 {

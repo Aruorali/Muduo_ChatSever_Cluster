@@ -185,6 +185,30 @@ __/database/friendmodel.cpp.s:
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.s
 .PHONY : __/database/friendmodel.cpp.s
 
+__/database/groupmodel.o: __/database/groupmodel.cpp.o
+.PHONY : __/database/groupmodel.o
+
+# target to build an object file
+__/database/groupmodel.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o
+.PHONY : __/database/groupmodel.cpp.o
+
+__/database/groupmodel.i: __/database/groupmodel.cpp.i
+.PHONY : __/database/groupmodel.i
+
+# target to preprocess a source file
+__/database/groupmodel.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.i
+.PHONY : __/database/groupmodel.cpp.i
+
+__/database/groupmodel.s: __/database/groupmodel.cpp.s
+.PHONY : __/database/groupmodel.s
+
+# target to generate assembly for a file
+__/database/groupmodel.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.s
+.PHONY : __/database/groupmodel.cpp.s
+
 __/database/offlinemsgmodel.o: __/database/offlinemsgmodel.cpp.o
 .PHONY : __/database/offlinemsgmodel.o
 
@@ -345,6 +369,9 @@ help:
 	@echo "... __/database/friendmodel.o"
 	@echo "... __/database/friendmodel.i"
 	@echo "... __/database/friendmodel.s"
+	@echo "... __/database/groupmodel.o"
+	@echo "... __/database/groupmodel.i"
+	@echo "... __/database/groupmodel.s"
 	@echo "... __/database/offlinemsgmodel.o"
 	@echo "... __/database/offlinemsgmodel.i"
 	@echo "... __/database/offlinemsgmodel.s"

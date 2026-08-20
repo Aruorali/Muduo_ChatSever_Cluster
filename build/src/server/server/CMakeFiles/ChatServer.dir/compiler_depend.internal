@@ -2004,6 +2004,9 @@ src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatservice.cpp
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/db.hpp
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/friendmodel.hpp
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/group.hpp
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupmodel.hpp
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupuser.hpp
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/offlinemsgmodel.hpp
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/usermodle.hpp

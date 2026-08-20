@@ -331,5 +331,9 @@ src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: \
  /usr/include/mysql/client_plugin.h /usr/include/c++/14/stdlib.h \
  /usr/include/mysql/plugin_auth_common.h \
  /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
- /usr/include/mysql/errmsg.h /usr/local/include/muduo/base/Logging.h \
+ /usr/include/mysql/errmsg.h \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupmodel.hpp \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/group.hpp \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupuser.hpp \
+ /usr/local/include/muduo/base/Logging.h \
  /usr/local/include/muduo/base/LogStream.h

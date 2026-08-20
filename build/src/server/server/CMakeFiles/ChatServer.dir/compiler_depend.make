@@ -1995,6 +1995,9 @@ src/server/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o: /home/lichenxi/Pro
 src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatservice.cpp \
   /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/db.hpp \
   /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/friendmodel.hpp \
+  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/group.hpp \
+  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupmodel.hpp \
+  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupuser.hpp \
   /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/offlinemsgmodel.hpp \
   /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
   /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/usermodle.hpp \
@@ -2405,6 +2408,8 @@ src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /home/lichenxi/Pr
   /usr/local/include/muduo/net/TcpConnection.h
 
 
+/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupmodel.hpp:
+
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatservice.cpp:
 
 /usr/local/include/muduo/net/TimerId.h:
@@ -2474,6 +2479,8 @@ src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /home/lichenxi/Pr
 /usr/include/c++/14/tr1/exp_integral.tcc:
 
 /usr/include/c++/14/tr1/bessel_function.tcc:
+
+/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/group.hpp:
 
 /usr/include/c++/14/pstl/glue_numeric_defs.h:
 
@@ -2566,6 +2573,8 @@ src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o: /home/lichenxi/Pr
 /usr/include/c++/14/bits/forward_list.h:
 
 /usr/include/c++/14/bits/erase_if.h:
+
+/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupuser.hpp:
 
 /usr/include/c++/14/bits/std_function.h:
 

@@ -128,10 +128,24 @@ src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.s"
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/friendmodel.cpp -o CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.s
 
+src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/flags.make
+src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o: /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/groupmodel.cpp
+src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o"
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o -MF CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o.d -o CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/groupmodel.cpp
+
+src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.i"
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/groupmodel.cpp > CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.i
+
+src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.s"
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/groupmodel.cpp -o CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.s
+
 src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/flags.make
 src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o: /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/offlinemsgmodel.cpp
 src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o"
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o -MF CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o.d -o CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/offlinemsgmodel.cpp
 
 src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.i: cmake_force
@@ -145,7 +159,7 @@ src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.s: c
 src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/flags.make
 src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o: /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/user.cpp
 src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o"
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o -MF CMakeFiles/ChatServer.dir/__/database/user.cpp.o.d -o CMakeFiles/ChatServer.dir/__/database/user.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/user.cpp
 
 src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.i: cmake_force
@@ -159,7 +173,7 @@ src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.s: cmake_force
 src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/flags.make
 src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o: /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/usermodle.cpp
 src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o"
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o -MF CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o.d -o CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/usermodle.cpp
 
 src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.i: cmake_force
@@ -173,7 +187,7 @@ src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.s: cmake_f
 src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/flags.make
 src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o: /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/main.cpp
 src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o: src/server/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o"
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && /usr/bin/g++-14 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o -MF CMakeFiles/ChatServer.dir/__/main.cpp.o.d -o CMakeFiles/ChatServer.dir/__/main.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/main.cpp
 
 src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.i: cmake_force
@@ -190,6 +204,7 @@ ChatServer_OBJECTS = \
 "CMakeFiles/ChatServer.dir/chatservice.cpp.o" \
 "CMakeFiles/ChatServer.dir/__/database/db.cpp.o" \
 "CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o" \
+"CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o" \
 "CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o" \
 "CMakeFiles/ChatServer.dir/__/database/user.cpp.o" \
 "CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o" \
@@ -202,6 +217,7 @@ ChatServer_EXTERNAL_OBJECTS =
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/__/database/db.cpp.o
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o
+/home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o
@@ -209,7 +225,7 @@ ChatServer_EXTERNAL_OBJECTS =
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/build.make
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/compiler_depend.ts
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer: src/server/server/CMakeFiles/ChatServer.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable /home/lichenxi/Projects/Muduo_ChatSever_Cluster/bin/ChatServer"
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ChatServer.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

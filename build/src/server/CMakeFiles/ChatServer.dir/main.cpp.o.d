@@ -326,6 +326,12 @@ src/server/CMakeFiles/ChatServer.dir/main.cpp.o: \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
  /usr/include/c++/14/mutex /usr/include/c++/14/bits/std_mutex.h \
  /usr/include/c++/14/bits/unique_lock.h \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis/redis.hpp \
+ /usr/local/include/hiredis/hiredis.h /usr/local/include/hiredis/read.h \
+ /usr/include/x86_64-linux-gnu/sys/time.h \
+ /usr/local/include/hiredis/sds.h /usr/local/include/hiredis/alloc.h \
+ /usr/include/c++/14/thread /usr/include/c++/14/bits/std_thread.h \
+ /usr/include/c++/14/bits/this_thread_sleep.h \
  /usr/local/include/muduo/base/Logging.h \
  /usr/local/include/muduo/base/LogStream.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \

@@ -318,6 +318,12 @@ src/server/CMakeFiles/ChatServer.dir/server/chatservice.cpp.o: \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
  /usr/include/c++/14/mutex /usr/include/c++/14/bits/std_mutex.h \
  /usr/include/c++/14/bits/unique_lock.h \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis/redis.hpp \
+ /usr/local/include/hiredis/hiredis.h /usr/local/include/hiredis/read.h \
+ /usr/include/x86_64-linux-gnu/sys/time.h \
+ /usr/local/include/hiredis/sds.h /usr/local/include/hiredis/alloc.h \
+ /usr/include/c++/14/thread /usr/include/c++/14/bits/std_thread.h \
+ /usr/include/c++/14/bits/this_thread_sleep.h \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public/msgtype.hpp \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/usermodle.hpp \
@@ -332,6 +338,7 @@ src/server/CMakeFiles/ChatServer.dir/server/chatservice.cpp.o: \
  /usr/include/mysql/plugin_auth_common.h \
  /usr/include/mysql/mysql_version.h /usr/include/mysql/mysql_time.h \
  /usr/include/mysql/errmsg.h \
+ /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/group.hpp \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupmodel.hpp \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/group.hpp \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/groupuser.hpp \

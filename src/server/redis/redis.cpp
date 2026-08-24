@@ -59,10 +59,12 @@ bool Redis::connect()
         _subscribeCtx = nullptr;
         return false;
     }
-    //创建单独线程监听通道上的事件，有消息给业务层上报 
+    //创建单独线程监听通道上的事件，有消息给业务层上报
+
     std::thread acceptNotifyMsgThread([this](){
         this->acceptNotifyMsg();
     });
+    acceptNotifyMsgThread.detach(); 
     return true;
 }
 
@@ -85,7 +87,7 @@ bool Redis::subscribe(int channel)
     // 将SUBSCRIBE命令追加到订阅连接的命令缓冲区
     // 命令格式：SUBSCRIBE <channel_id>
     // REDIS_ERR表示命令添加失败
-    if(REDIS_ERR==redisAppendCommand(this->_subscribeCtx,"SUBSCRIBE %d",channel));
+    if(REDIS_ERR==redisAppendCommand(this->_subscribeCtx,"SUBSCRIBE %d",channel))  // 🔴 关键修复：删除了多余的分号！
     {
         std::cerr<<"subscribe channel error"<<std::endl;
         return false;
@@ -114,7 +116,8 @@ bool Redis::subscribe(int channel)
 // 取消订阅channel
 bool Redis::unsubscribe(int channel)
 {
-    if(REDIS_ERR==redisAppendCommand(this->_subscribeCtx,"UNSUBSCRIBE %d",channel));
+    // 🔴 关键修复：删除了多余的分号！
+    if(REDIS_ERR==redisAppendCommand(this->_subscribeCtx,"UNSUBSCRIBE %d",channel))
     {
         std::cerr<<"unsubscribe channel error"<<std::endl;
         return false;
@@ -136,6 +139,9 @@ bool Redis::unsubscribe(int channel)
             return false;
         }
     }
+
+    // UNSUBSCRIBE命令成功发送到Redis服务器
+    return true;
 }
 // 发布消息
 // 发布消息到指定频道（跨服务器消息转发）

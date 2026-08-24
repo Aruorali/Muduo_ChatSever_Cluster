@@ -34,10 +34,15 @@ ChatService::ChatService()
 // 在构造函数中调用，建立与Redis的连接并注册消息接收回调
 void ChatService::initRedisHandler()
 {
+    LOG_INFO << "Initializing Redis connection...";
+
     // 连接Redis服务器（建立订阅和发布两个连接）
     if (!_redis.connect())
     {
         LOG_ERROR << "Failed to connect to Redis server!";
+        LOG_WARN << "System will continue running without Redis support (single-server mode)";
+        // 注意：不直接返回或退出，允许系统在无Redis模式下运行（降级模式）
+        // 跨服务器消息转发功能将不可用，但本地消息仍可正常工作
         return;
     }
 
@@ -321,25 +326,130 @@ void ChatService::addGroup(const TcpConnectionPtr &conn, json &js, Timestamp tim
     LOG_INFO << "user id:" << userid << " join group id:" << groupid;
 }
 
-//处理群聊业务
+//处理群聊业务（包含完整的跨服务器转发逻辑）
+//
+// 功能说明：将群聊消息分发给群组的所有成员（除发送者自己）
+//
+// 消息分发策略（对每个成员）：
+// 1. 成员在本服务器在线 → 直接转发（最优路径）
+// 2. 成员不在本服务器在线 → 通过 Redis PUBLISH 发布到成员的频道
+// 3. 成员完全离线 → 存储到离线消息表，等上线时推送
+//
+// 参数：
+//   conn - 发送者的 TCP 连接
+//   js   - 群聊消息 JSON，包含：
+//         - id: 发送者用户ID
+//         - groupid: 目标群组ID
+//         - msg: 消息内容
+//   time - 时间戳
 void ChatService::groupChat(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-    int userid = js["id"].get<int>();
-    int groupid = js["groupid"].get<int>();
+    int userid = js["id"].get<int>();           // 发送者ID
+    int groupid = js["groupid"].get<int>();       // 群组ID
+    std::string msg = js["msg"].get<std::string>(); // 消息内容
 
+    LOG_INFO << "User " << userid << " send group message to group " << groupid;
+
+    // 查询群组所有成员（包括发送者自己，后续会过滤）
     GroupModel groupModel;
     std::vector<GroupUser> members = groupModel.queryGroupUsers(userid, groupid);
 
-    std::string msg = js.dump();
-    std::lock_guard<std::mutex> lock(_mutex);
+    if (members.empty())
+    {
+        LOG_ERROR << "Group " << groupid << " has no members or user " << userid << " is not a member";
+        return;
+    }
+
+    // 统计分发结果
+    int localOnlineCount = 0;      // 本服务器在线人数
+    int redisPublishCount = 0;     // 通过Redis转发的人数
+    int offlineCount = 0;          // 离线存储的人数
+
+    // 遍历所有群成员，逐一分发消息
     for (const GroupUser &member : members)
     {
-        auto it = _userOnlineMap.find(member.getId());
-        if (it != _userOnlineMap.end())
+        int memberid = member.getId();  // 当前成员的ID
+
+        // 跳过发送者自己（不需要给自己发消息）
+        if (memberid == userid)
         {
-            it->second->send(msg);
+            continue;
+        }
+
+        // 第一步：检查成员是否在本服务器在线
+        TcpConnectionPtr memberConn = nullptr;
+        {
+            std::lock_guard<std::mutex> lock(_mutex);
+            auto it = _userOnlineMap.find(memberid);
+            if (it != _userOnlineMap.end())
+            {
+                memberConn = it->second;  // 找到成员连接
+            }
+        }
+
+        if (memberConn)
+        {
+            // ✅ 情况1：成员在本服务器在线 → 直接转发（最快）
+            LOG_INFO << "Group member " << memberid << " is online on this server, send directly";
+
+            json groupMsg;
+            groupMsg["msgid"] = GROUP_CHAT_MSG;  // 消息类型：群聊
+            groupMsg["id"] = userid;              // 发送者ID
+            groupMsg["name"] = js["name"];         // 发送者名称（如果有）
+            groupMsg["group"] = groupid;           // 群组ID
+            groupMsg["msg"] = msg;                 // 消息内容
+            groupMsg["time"] = js["time"];         // 发送时间（如果有）
+
+            memberConn->send(groupMsg.dump());
+            localOnlineCount++;
+        }
+        else
+        {
+            // ❌ 成员不在本服务器在线，尝试通过 Redis 转发
+
+            // 构造群聊消息体（用于 Redis 转发和离线存储）
+            std::string groupMsgContent = js.dump();
+
+            // 第二步：通过 Redis 发布到成员的专属频道
+            bool publishSuccess = _redis.publish(memberid, userid, memberid, groupMsgContent);
+
+            if (publishSuccess)
+            {
+                // Redis 发布成功（可能有其他服务器订阅了该成员的频道）
+                LOG_INFO << "Group message published to Redis for member " << memberid;
+                redisPublishCount++;
+
+                // 同时存储离线消息作为兜底（防止消息丢失）
+                // 注意：这可能导致消息重复，但保证了可靠性
+                OfflinMsgModel offlinemsgmodel;
+                offlinemsgmodel.insert(memberid, userid, groupMsgContent);
+                offlineCount++;  // 记录为离线存储（即使实际被转发了）
+            }
+            else
+            {
+                // Redis 发布失败，降级为纯本地离线存储
+                LOG_ERROR << "Failed to publish group message via Redis for member " << memberid;
+
+                OfflinMsgModel offlinemsgmodel;
+                offlinemsgmodel.insert(memberid, userid, groupMsgContent);
+                offlineCount++;
+            }
         }
     }
+
+    // 打印分发统计日志
+    LOG_INFO << "Group chat distribution summary - "
+            << "Total members: " << (members.size() - 1)  // 减去发送者自己
+            << ", Local online: " << localOnlineCount
+            << ", Redis forwarded: " << redisPublishCount
+            << ", Offline stored: " << offlineCount;
+
+    // 返回群聊成功确认给发送者（可选）
+    json ack;
+    ack["errno"] = 0;
+    ack["groupid"] = groupid;
+    ack["memberCount"] = (members.size() - 1);  // 实际接收人数
+    conn->send(ack.dump());
 }
 
 //客户端异常断开

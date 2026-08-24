@@ -3,8 +3,7 @@
 	[
 		"/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/cmake_install.cmake",
 		"/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/cmake_install.cmake",
-		"/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/cmake_install.cmake",
-		"/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server/cmake_install.cmake"
+		"/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

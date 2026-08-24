@@ -13,7 +13,6 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/4.2.3/CMakeSystem.cmake"
   "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/CMakeLists.txt"
   "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/CMakeLists.txt"
-  "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/CMakeLists.txt"
   "/usr/share/cmake-4.2/Modules/CMakeCInformation.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeCXXInformation.cmake"
   "/usr/share/cmake-4.2/Modules/CMakeCommonLanguageInclude.cmake"
@@ -55,10 +54,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/CMakeFiles/CMakeDirectoryInformation.cmake"
   "src/server/CMakeFiles/CMakeDirectoryInformation.cmake"
-  "src/server/server/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "src/server/server/CMakeFiles/ChatServer.dir/DependInfo.cmake"
+  "src/server/CMakeFiles/ChatServer.dir/DependInfo.cmake"
   )

@@ -133,7 +133,7 @@ ChatServer: cmake_check_build_system
 
 # fast build rule for target.
 ChatServer/fast:
-	$(MAKE) $(MAKESILENT) -f src/server/server/CMakeFiles/ChatServer.dir/build.make src/server/server/CMakeFiles/ChatServer.dir/build
+	$(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/build
 .PHONY : ChatServer/fast
 
 # Help Target

@@ -3,6 +3,7 @@
 #include"user.hpp"
 #include"usermodle.hpp"
 #include"friendmodel.hpp"
+#include"group.hpp"
 #include"groupmodel.hpp"
 #include<muduo/base/Logging.h>
 
@@ -16,6 +17,7 @@ ChatService* ChatService::instance()
 
 ChatService::ChatService()
 {
+    // 注册消息处理器
     _handlerMap.insert({LOGIN_MSG, std::bind(&ChatService::login, this, _1, _2, _3)});
     _handlerMap.insert({REG_MSG, std::bind(&ChatService::reg, this, _1, _2, _3)});
     _handlerMap.insert({SEND_MSG,std::bind(&ChatService::onechat, this, _1, _2, _3)});
@@ -23,6 +25,29 @@ ChatService::ChatService()
     _handlerMap.insert({CREATE_GROUP_MSG,std::bind(&ChatService::createGroup, this, _1, _2, _3)});
     _handlerMap.insert({ADD_GROUP_MSG,std::bind(&ChatService::addGroup, this, _1, _2, _3)});
     _handlerMap.insert({GROUP_CHAT_MSG,std::bind(&ChatService::groupChat, this, _1, _2, _3)});
+
+    // 初始化Redis连接和消息处理回调
+    initRedisHandler();
+}
+
+// 初始化Redis连接和消息处理器
+// 在构造函数中调用，建立与Redis的连接并注册消息接收回调
+void ChatService::initRedisHandler()
+{
+    // 连接Redis服务器（建立订阅和发布两个连接）
+    if (!_redis.connect())
+    {
+        LOG_ERROR << "Failed to connect to Redis server!";
+        return;
+    }
+
+    LOG_INFO << "Successfully connected to Redis server";
+
+    // 设置收到订阅消息时的回调函数
+    // 当其他服务器通过Redis发送消息到本服务器时，会调用 handleRedisMessage 处理
+    _redis.setNotifyMsgHandler(std::bind(&ChatService::handleRedisMessage, this, _1, _2, _3, _4));
+
+    LOG_INFO << "Redis message handler registered successfully";
 }
 
 //获取消息对应的处理器
@@ -51,9 +76,23 @@ void ChatService::login(const TcpConnectionPtr &conn, json &js, Timestamp time)
     UserModle userModle;
     if (userModle.login(id, password))
     {
+        // 用户登录成功，添加到在线用户映射
         {
             std::lock_guard<std::mutex> lock(_mutex);
             _userOnlineMap.insert({id, conn});
+        }
+
+        // 订阅该用户的Redis频道（用于接收其他服务器转发的消息）
+        // 频道ID就是用户ID，这样当其他服务器要给此用户发消息时，
+        // 会通过 PUBLISH 命令发送到此频道，本服务器就能收到
+        if (!_redis.subscribe(id))
+        {
+            LOG_ERROR << "Failed to subscribe Redis channel for user " << id;
+            // 订阅失败不影响登录，只是无法接收跨服务器消息
+        }
+        else
+        {
+            LOG_INFO << "Subscribed Redis channel for user " << id;
         }
 
         // 登录成功后，向该用户推送离线消息
@@ -136,24 +175,85 @@ void ChatService::reg(const TcpConnectionPtr &conn, json &js, Timestamp time)
         LOG_ERROR<<"user name:"<<user.getName()<<" reg failed!";
     }
 }
-//处理发送消息
+//处理发送消息（包含完整的跨服务器转发逻辑）
+//
+// 消息处理流程：
+// 1. 解析消息：获取接收者ID(toid)、发送者ID(fromid)、消息内容(msg)
+// 2. 本地查找：检查目标用户是否在当前服务器在线
+//   - 在线 → 直接转发（最优路径，无需经过Redis）
+// 3. 跨服务器转发：
+//   - 不在本服务器在线 → 通过Redis PUBLISH发布到目标用户的频道
+//   - 目标用户所在的服务器订阅了该频道，会收到消息
+// 4. 离线存储：
+//   - 如果Redis返回0（没有服务器订阅该频道，说明目标用户完全离线）
+//   - 将消息存储到离线消息表，等用户上线时推送
 void ChatService::onechat(const TcpConnectionPtr &conn, json &js, Timestamp time)
 {
-    int toid=js["toid"].get<int>();
+    int fromid = js["id"].get<int>();           // 发送者ID
+    int toid = js["toid"].get<int>();             // 接收者ID
+    std::string msg = js["msg"].get<std::string>(); // 消息内容
+
+    LOG_INFO << "User " << fromid << " send message to user " << toid;
+
+    // 第一步：检查目标用户是否在当前服务器在线
     {
         std::lock_guard<std::mutex> lock(_mutex);
         auto it = _userOnlineMap.find(toid);
-        if(it!=_userOnlineMap.end())
+        if(it != _userOnlineMap.end())
         {
-            //发送消息对象online
-            it->second->send(js.dump());
+            // 目标用户在本服务器在线，直接转发消息（最快路径）
+            LOG_INFO << "User " << toid << " is online on this server, send directly";
+
+            // 构造发送给接收者的JSON消息
+            json response;
+            response["msgid"] = SEND_MSG;
+            response["id"] = fromid;      // 发送者ID
+            response["msg"] = msg;         // 消息内容
+            it->second->send(response.dump());
             return;
         }
     }
-    //不在线,储存离线消息
-    OfflinMsgModel _offlinemsgmodel;
-    _offlinemsgmodel.insert(toid, js["id"].get<int>(), js["msg"].get<std::string>());
 
+    // 第二步：目标用户不在本服务器在线，尝试通过Redis跨服务器转发
+    LOG_INFO << "User " << toid << " is not online on this server, try Redis publish";
+
+    // 通过Redis发布消息到目标用户的频道
+    // 参数说明：
+    //   channel: toid (目标用户ID作为频道名)
+    //   fromid:  发送者ID
+    //   toid:    接收者ID
+    //   msg:     消息内容
+    bool publishSuccess = _redis.publish(toid, fromid, toid, msg);
+
+    if (publishSuccess)
+    {
+        LOG_INFO << "Message published to Redis channel " << toid;
+        // 注意：publish成功只表示Redis收到了消息，不代表目标用户在线
+        // 如果没有服务器订阅该频道（reply->integer == 0），
+        // 说明目标用户可能在所有服务器都离线，需要存储离线消息
+
+        // 这里可以选择：
+        // 方案A：总是存储离线消息（简单但可能重复）
+        // 方案B：只在确定无人在线时存储（需要修改Redis::publish返回订阅数）
+        // 当前采用方案A，确保消息不丢失
+        OfflinMsgModel _offlinemsgmodel;
+        _offlinemsgmodel.insert(toid, fromid, msg);
+        LOG_INFO << "Message saved to offline storage for user " << toid;
+    }
+    else
+    {
+        // Redis发布失败，降级为本地离线存储
+        LOG_ERROR << "Failed to publish message via Redis, save to offline storage";
+
+        OfflinMsgModel _offlinemsgmodel;
+        _offlinemsgmodel.insert(toid, fromid, msg);
+    }
+
+    // 返回发送确认给发送者（可选）
+    json ack;
+    ack["errno"] = 0;
+    ack["toid"] = toid;
+    conn->send(ack.dump());
 }
 //处理添加好友消息
 void ChatService::addfriend(const TcpConnectionPtr &conn, json &js, Timestamp time)
@@ -262,12 +362,75 @@ void ChatService::clientClose(const TcpConnectionPtr &conn)
 
     if (userId != -1)
     {
+        // 取消订阅该用户的Redis频道（用户已离线，不需要再接收跨服务器消息）
+        if (!_redis.unsubscribe(userId))
+        {
+            LOG_ERROR << "Failed to unsubscribe Redis channel for user " << userId;
+        }
+        else
+        {
+            LOG_INFO << "Unsubscribed Redis channel for user " << userId;
+        }
+
+        // 更新用户状态为离线
         User user;
         user.setId(userId);
         user.setState("offline");
         UserModle userModle;
         userModle.updateState(user);
         LOG_INFO << "user id:" << userId << " disconnected, state set to offline";
+    }
+}
+
+// 处理从其他服务器通过Redis转发的消息（回调函数）
+//
+// 此函数在独立线程中被调用（由 Redis::acceptNotifyMsg 触发）
+// 当其他服务器通过 Redis PUBLISH 发送消息到本服务器的用户频道时，
+// 本服务器的 Redis 订阅连接会收到消息，然后调用此回调处理
+//
+// 参数：
+//   channel - 频道ID（即目标用户ID，应该等于toid）
+//   fromid  - 发送者用户ID
+//   toid    - 接收者用户ID
+//   msg     - 消息内容
+//
+// 处理逻辑：
+// 1. 检查目标用户是否在本服务器在线
+//    - 在线 → 直接转发给用户的TcpConnection
+//    - 离线 → 存储到离线消息表，等用户上线时推送
+void ChatService::handleRedisMessage(int channel, int fromid, int toid, const std::string& msg)
+{
+    LOG_INFO << "Received message from Redis: from=" << fromid << ", to=" << toid << ", msg=" << msg;
+
+    // 检查目标用户是否在当前服务器在线
+    TcpConnectionPtr targetConn = nullptr;
+    {
+        std::lock_guard<std::mutex> lock(_mutex);
+        auto it = _userOnlineMap.find(toid);
+        if (it != _userOnlineMap.end())
+        {
+            targetConn = it->second;  // 找到目标用户的连接
+        }
+    }
+
+    if (targetConn)
+    {
+        // 目标用户在线，直接转发消息
+        LOG_INFO << "User " << toid << " is online, forward message directly";
+
+        json response;
+        response["msgid"] = SEND_MSG;
+        response["id"] = fromid;      // 发送者ID
+        response["msg"] = msg;         // 消息内容
+        targetConn->send(response.dump());
+    }
+    else
+    {
+        // 目标用户不在线，存储离线消息
+        LOG_INFO << "User " << toid << " is offline, save to offline storage";
+
+        OfflinMsgModel _offlinemsgmodel;
+        _offlinemsgmodel.insert(toid, fromid, msg);
     }
 }
 //服务端异常中断

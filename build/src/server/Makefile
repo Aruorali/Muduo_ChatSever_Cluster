@@ -123,6 +123,260 @@ depend:
 	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+src/server/CMakeFiles/ChatServer.dir/rule:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 src/server/CMakeFiles/ChatServer.dir/rule
+.PHONY : src/server/CMakeFiles/ChatServer.dir/rule
+
+# Convenience name for target.
+ChatServer: src/server/CMakeFiles/ChatServer.dir/rule
+.PHONY : ChatServer
+
+# fast build rule for target.
+ChatServer/fast:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/build
+.PHONY : ChatServer/fast
+
+database/db.o: database/db.cpp.o
+.PHONY : database/db.o
+
+# target to build an object file
+database/db.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/db.cpp.o
+.PHONY : database/db.cpp.o
+
+database/db.i: database/db.cpp.i
+.PHONY : database/db.i
+
+# target to preprocess a source file
+database/db.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/db.cpp.i
+.PHONY : database/db.cpp.i
+
+database/db.s: database/db.cpp.s
+.PHONY : database/db.s
+
+# target to generate assembly for a file
+database/db.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/db.cpp.s
+.PHONY : database/db.cpp.s
+
+database/friendmodel.o: database/friendmodel.cpp.o
+.PHONY : database/friendmodel.o
+
+# target to build an object file
+database/friendmodel.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/friendmodel.cpp.o
+.PHONY : database/friendmodel.cpp.o
+
+database/friendmodel.i: database/friendmodel.cpp.i
+.PHONY : database/friendmodel.i
+
+# target to preprocess a source file
+database/friendmodel.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/friendmodel.cpp.i
+.PHONY : database/friendmodel.cpp.i
+
+database/friendmodel.s: database/friendmodel.cpp.s
+.PHONY : database/friendmodel.s
+
+# target to generate assembly for a file
+database/friendmodel.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/friendmodel.cpp.s
+.PHONY : database/friendmodel.cpp.s
+
+database/groupmodel.o: database/groupmodel.cpp.o
+.PHONY : database/groupmodel.o
+
+# target to build an object file
+database/groupmodel.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/groupmodel.cpp.o
+.PHONY : database/groupmodel.cpp.o
+
+database/groupmodel.i: database/groupmodel.cpp.i
+.PHONY : database/groupmodel.i
+
+# target to preprocess a source file
+database/groupmodel.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/groupmodel.cpp.i
+.PHONY : database/groupmodel.cpp.i
+
+database/groupmodel.s: database/groupmodel.cpp.s
+.PHONY : database/groupmodel.s
+
+# target to generate assembly for a file
+database/groupmodel.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/groupmodel.cpp.s
+.PHONY : database/groupmodel.cpp.s
+
+database/offlinemsgmodel.o: database/offlinemsgmodel.cpp.o
+.PHONY : database/offlinemsgmodel.o
+
+# target to build an object file
+database/offlinemsgmodel.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/offlinemsgmodel.cpp.o
+.PHONY : database/offlinemsgmodel.cpp.o
+
+database/offlinemsgmodel.i: database/offlinemsgmodel.cpp.i
+.PHONY : database/offlinemsgmodel.i
+
+# target to preprocess a source file
+database/offlinemsgmodel.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/offlinemsgmodel.cpp.i
+.PHONY : database/offlinemsgmodel.cpp.i
+
+database/offlinemsgmodel.s: database/offlinemsgmodel.cpp.s
+.PHONY : database/offlinemsgmodel.s
+
+# target to generate assembly for a file
+database/offlinemsgmodel.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/offlinemsgmodel.cpp.s
+.PHONY : database/offlinemsgmodel.cpp.s
+
+database/user.o: database/user.cpp.o
+.PHONY : database/user.o
+
+# target to build an object file
+database/user.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/user.cpp.o
+.PHONY : database/user.cpp.o
+
+database/user.i: database/user.cpp.i
+.PHONY : database/user.i
+
+# target to preprocess a source file
+database/user.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/user.cpp.i
+.PHONY : database/user.cpp.i
+
+database/user.s: database/user.cpp.s
+.PHONY : database/user.s
+
+# target to generate assembly for a file
+database/user.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/user.cpp.s
+.PHONY : database/user.cpp.s
+
+database/usermodle.o: database/usermodle.cpp.o
+.PHONY : database/usermodle.o
+
+# target to build an object file
+database/usermodle.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/usermodle.cpp.o
+.PHONY : database/usermodle.cpp.o
+
+database/usermodle.i: database/usermodle.cpp.i
+.PHONY : database/usermodle.i
+
+# target to preprocess a source file
+database/usermodle.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/usermodle.cpp.i
+.PHONY : database/usermodle.cpp.i
+
+database/usermodle.s: database/usermodle.cpp.s
+.PHONY : database/usermodle.s
+
+# target to generate assembly for a file
+database/usermodle.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/database/usermodle.cpp.s
+.PHONY : database/usermodle.cpp.s
+
+main.o: main.cpp.o
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/main.cpp.s
+.PHONY : main.cpp.s
+
+redis/redis.o: redis/redis.cpp.o
+.PHONY : redis/redis.o
+
+# target to build an object file
+redis/redis.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o
+.PHONY : redis/redis.cpp.o
+
+redis/redis.i: redis/redis.cpp.i
+.PHONY : redis/redis.i
+
+# target to preprocess a source file
+redis/redis.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.i
+.PHONY : redis/redis.cpp.i
+
+redis/redis.s: redis/redis.cpp.s
+.PHONY : redis/redis.s
+
+# target to generate assembly for a file
+redis/redis.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.s
+.PHONY : redis/redis.cpp.s
+
+server/chatserver.o: server/chatserver.cpp.o
+.PHONY : server/chatserver.o
+
+# target to build an object file
+server/chatserver.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/server/chatserver.cpp.o
+.PHONY : server/chatserver.cpp.o
+
+server/chatserver.i: server/chatserver.cpp.i
+.PHONY : server/chatserver.i
+
+# target to preprocess a source file
+server/chatserver.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/server/chatserver.cpp.i
+.PHONY : server/chatserver.cpp.i
+
+server/chatserver.s: server/chatserver.cpp.s
+.PHONY : server/chatserver.s
+
+# target to generate assembly for a file
+server/chatserver.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/server/chatserver.cpp.s
+.PHONY : server/chatserver.cpp.s
+
+server/chatservice.o: server/chatservice.cpp.o
+.PHONY : server/chatservice.o
+
+# target to build an object file
+server/chatservice.cpp.o:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/server/chatservice.cpp.o
+.PHONY : server/chatservice.cpp.o
+
+server/chatservice.i: server/chatservice.cpp.i
+.PHONY : server/chatservice.i
+
+# target to preprocess a source file
+server/chatservice.cpp.i:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/server/chatservice.cpp.i
+.PHONY : server/chatservice.cpp.i
+
+server/chatservice.s: server/chatservice.cpp.s
+.PHONY : server/chatservice.s
+
+# target to generate assembly for a file
+server/chatservice.cpp.s:
+	cd /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build && $(MAKE) $(MAKESILENT) -f src/server/CMakeFiles/ChatServer.dir/build.make src/server/CMakeFiles/ChatServer.dir/server/chatservice.cpp.s
+.PHONY : server/chatservice.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -132,6 +386,37 @@ help:
 	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... ChatServer"
+	@echo "... database/db.o"
+	@echo "... database/db.i"
+	@echo "... database/db.s"
+	@echo "... database/friendmodel.o"
+	@echo "... database/friendmodel.i"
+	@echo "... database/friendmodel.s"
+	@echo "... database/groupmodel.o"
+	@echo "... database/groupmodel.i"
+	@echo "... database/groupmodel.s"
+	@echo "... database/offlinemsgmodel.o"
+	@echo "... database/offlinemsgmodel.i"
+	@echo "... database/offlinemsgmodel.s"
+	@echo "... database/user.o"
+	@echo "... database/user.i"
+	@echo "... database/user.s"
+	@echo "... database/usermodle.o"
+	@echo "... database/usermodle.i"
+	@echo "... database/usermodle.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
+	@echo "... redis/redis.o"
+	@echo "... redis/redis.i"
+	@echo "... redis/redis.s"
+	@echo "... server/chatserver.o"
+	@echo "... server/chatserver.i"
+	@echo "... server/chatserver.s"
+	@echo "... server/chatservice.o"
+	@echo "... server/chatservice.i"
+	@echo "... server/chatservice.s"
 .PHONY : help
 
 

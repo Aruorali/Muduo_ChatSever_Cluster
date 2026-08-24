@@ -14,6 +14,7 @@ include_directories(${PROJECT_SOURCE_DIR}/thirdpart)
 include_directories(${PROJECT_SOURCE_DIR}/include/database)
 include_directories(${PROJECT_SOURCE_DIR}/include/public)
 include_directories(${PROJECT_SOURCE_DIR}/include/server)
+include_directories(${PROJECT_SOURCE_DIR}/include/redis)
 #load subdirectories
 add_subdirectory(src)
 #

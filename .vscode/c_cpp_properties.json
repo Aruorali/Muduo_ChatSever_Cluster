@@ -6,6 +6,7 @@
                 "${workspaceFolder}/**",
                 "${workspaceFolder}/include/server",
                 "${workspaceFolder}/include/public",
+                "${workspaceFolder}/include/redis",
                 "${workspaceFolder}/thirdpart",
                 "/usr/include",
                 "/usr/local/include"

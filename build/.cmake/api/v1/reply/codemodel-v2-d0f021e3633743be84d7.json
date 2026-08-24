@@ -36,10 +36,6 @@
 				},
 				{
 					"build" : "src/server",
-					"childIndexes" : 
-					[
-						3
-					],
 					"jsonFile" : "directory-src.server-Debug-a6895045833bd2400808.json",
 					"minimumCMakeVersion" : 
 					{
@@ -47,18 +43,7 @@
 					},
 					"parentIndex" : 1,
 					"projectIndex" : 0,
-					"source" : "src/server"
-				},
-				{
-					"build" : "src/server/server",
-					"jsonFile" : "directory-src.server.server-Debug-3babaa92602c522aa710.json",
-					"minimumCMakeVersion" : 
-					{
-						"string" : "4.0"
-					},
-					"parentIndex" : 2,
-					"projectIndex" : 0,
-					"source" : "src/server/server",
+					"source" : "src/server",
 					"targetIndexes" : 
 					[
 						0
@@ -73,8 +58,7 @@
 					[
 						0,
 						1,
-						2,
-						3
+						2
 					],
 					"name" : "Muduo_ChatServer_Cluster",
 					"targetIndexes" : 
@@ -86,9 +70,9 @@
 			"targets" : 
 			[
 				{
-					"directoryIndex" : 3,
-					"id" : "ChatServer::@82ff094a23ccc577b556",
-					"jsonFile" : "target-ChatServer-Debug-e24448afec813a2521f4.json",
+					"directoryIndex" : 2,
+					"id" : "ChatServer::@2804e40980a64c7d7ad1",
+					"jsonFile" : "target-ChatServer-Debug-012d31d25581f1baab48.json",
 					"name" : "ChatServer",
 					"projectIndex" : 0
 				}

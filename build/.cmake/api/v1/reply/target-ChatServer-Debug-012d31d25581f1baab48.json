@@ -16,7 +16,7 @@
 		],
 		"files" : 
 		[
-			"src/server/server/CMakeLists.txt",
+			"src/server/CMakeLists.txt",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
@@ -27,13 +27,13 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 4,
+				"line" : 5,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 7,
+				"line" : 8,
 				"parent" : 0
 			},
 			{
@@ -67,6 +67,12 @@
 				"command" : 2,
 				"file" : 1,
 				"line" : 16,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 17,
 				"parent" : 3
 			}
 		]
@@ -106,6 +112,10 @@
 				{
 					"backtrace" : 8,
 					"path" : "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis"
 				}
 			],
 			"language" : "CXX",
@@ -127,11 +137,12 @@
 				5,
 				6,
 				7,
-				8
+				8,
+				9
 			]
 		}
 	],
-	"id" : "ChatServer::@82ff094a23ccc577b556",
+	"id" : "ChatServer::@2804e40980a64c7d7ad1",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -159,6 +170,11 @@
 				"backtrace" : 2,
 				"fragment" : "-lmysqlclient",
 				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "-lhiredis",
+				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
@@ -180,14 +196,18 @@
 		{
 			"backtrace" : 2,
 			"fragment" : "mysqlclient"
+		},
+		{
+			"backtrace" : 2,
+			"fragment" : "hiredis"
 		}
 	],
 	"name" : "ChatServer",
 	"nameOnDisk" : "ChatServer",
 	"paths" : 
 	{
-		"build" : "src/server/server",
-		"source" : "src/server/server"
+		"build" : "src/server",
+		"source" : "src/server"
 	},
 	"sourceGroups" : 
 	[
@@ -203,7 +223,8 @@
 				5,
 				6,
 				7,
-				8
+				8,
+				9
 			]
 		}
 	],
@@ -255,6 +276,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/server/database/usermodle.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/server/redis/redis.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{

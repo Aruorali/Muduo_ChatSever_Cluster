@@ -325,7 +325,9 @@ src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o: \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/friendmodel.hpp \
  /home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database/user.hpp \
  /usr/include/c++/14/mutex /usr/include/c++/14/bits/std_mutex.h \
- /usr/include/c++/14/bits/unique_lock.h /usr/include/signal.h \
+ /usr/include/c++/14/bits/unique_lock.h \
+ /usr/local/include/muduo/base/Logging.h \
+ /usr/local/include/muduo/base/LogStream.h /usr/include/signal.h \
  /usr/include/x86_64-linux-gnu/bits/signum-generic.h \
  /usr/include/x86_64-linux-gnu/bits/signum-arch.h \
  /usr/include/x86_64-linux-gnu/bits/types/sig_atomic_t.h \

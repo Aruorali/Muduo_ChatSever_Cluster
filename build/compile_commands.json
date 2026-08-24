@@ -1,56 +1,62 @@
 [
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/chatserver.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatserver.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/server/chatserver.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatserver.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatserver.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/chatserver.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/server/chatserver.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/chatservice.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatservice.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/server/chatservice.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatservice.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/server/chatservice.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/chatservice.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/server/chatservice.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/db.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/db.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/database/db.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/db.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/db.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/db.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/database/db.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/friendmodel.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/database/friendmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/friendmodel.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/friendmodel.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/friendmodel.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/database/friendmodel.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/groupmodel.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/database/groupmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/groupmodel.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/groupmodel.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/groupmodel.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/database/groupmodel.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/offlinemsgmodel.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/database/offlinemsgmodel.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/offlinemsgmodel.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/offlinemsgmodel.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/offlinemsgmodel.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/database/offlinemsgmodel.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/user.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/user.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/database/user.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/user.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/user.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/user.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/database/user.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/usermodle.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/database/usermodle.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/usermodle.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/database/usermodle.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/database/usermodle.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/database/usermodle.cpp.o"
 },
 {
-  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server",
-  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -g -g -o CMakeFiles/ChatServer.dir/__/main.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/main.cpp",
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/redis/redis.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/redis/redis.cpp",
+  "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/redis/redis.cpp",
+  "output": "src/server/CMakeFiles/ChatServer.dir/redis/redis.cpp.o"
+},
+{
+  "directory": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server",
+  "command": "/usr/bin/g++-14  -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/thirdpart -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/database -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/public -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/server -I/home/lichenxi/Projects/Muduo_ChatSever_Cluster/include/redis -g -g -o CMakeFiles/ChatServer.dir/main.cpp.o -c /home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/main.cpp",
   "file": "/home/lichenxi/Projects/Muduo_ChatSever_Cluster/src/server/main.cpp",
-  "output": "src/server/server/CMakeFiles/ChatServer.dir/__/main.cpp.o"
+  "output": "src/server/CMakeFiles/ChatServer.dir/main.cpp.o"
 }
 ]

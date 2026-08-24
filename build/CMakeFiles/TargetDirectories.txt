@@ -2,8 +2,6 @@
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/CMakeFiles/rebuild_cache.dir
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/CMakeFiles/edit_cache.dir
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/CMakeFiles/rebuild_cache.dir
+/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/CMakeFiles/ChatServer.dir
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/CMakeFiles/edit_cache.dir
 /home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/CMakeFiles/rebuild_cache.dir
-/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server/CMakeFiles/ChatServer.dir
-/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server/CMakeFiles/edit_cache.dir
-/home/lichenxi/Projects/Muduo_ChatSever_Cluster/build/src/server/server/CMakeFiles/rebuild_cache.dir

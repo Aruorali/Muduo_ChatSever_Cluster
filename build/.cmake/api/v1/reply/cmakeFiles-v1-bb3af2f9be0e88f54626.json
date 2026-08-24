@@ -196,9 +196,6 @@
 		},
 		{
 			"path" : "src/server/CMakeLists.txt"
-		},
-		{
-			"path" : "src/server/server/CMakeLists.txt"
 		}
 	],
 	"kind" : "cmakeFiles",
